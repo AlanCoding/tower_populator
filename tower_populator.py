@@ -12,9 +12,6 @@ class Config:
     def __init__(self, **entries):
         self.__dict__.update(entries)
 
-
-
-
 # load configuration
 c = yaml.load(open(sys.argv[1]).read())
 tower = Config(**c)
@@ -75,7 +72,7 @@ if tower.credentials:
             if c['private_key_password'] == 'prompt':
                 c['ssh_key_unlock'] = getpass('Enter your ssh key password: ')
             else:
-                c['ssh_key_unlock'] = c['private_key_password']     
+                c['ssh_key_unlock'] = c['private_key_password']
         c = cred_res.create(**c)
 
 if tower.inventories:
@@ -110,7 +107,7 @@ if tower.inventories:
                         host_res.associate(host['id'], group['id'])
 
 if tower.projects:
-    # create projects 
+    # create projects
     print "\nCreating Projects\n"
     for p in tower.projects:
         print p
@@ -134,9 +131,3 @@ if tower.job_templates:
         j['project'] = project['id']
         j['organization'] = org_id
         job_template_res.create(**j)
-
-
-
-
-
-

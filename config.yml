@@ -7,26 +7,31 @@ users:
     first_name: Link
     is_superuser: yes
     last_name: Smith
+    password: passW04$D
   - username: gdorf
     email: gannon@hyrule.com
     first_name: Gannon
     is_superuser: false
     last_name: Dorf
+    password: passW04$D
   - username: zelda
     email: zelda@hyrule.com
     first_name: Zelda
     is_superuser: false
     last_name: Smith
+    password: passW04$D
   - username: epona
     email: epona@hyrule.com
     first_name: Epona
     is_superuser: false
     last_name: Horse
+    password: passW04$D
   - username: demise
     email: demise@hyrule.com
     first_name: De
     is_superuser: false
     last_name: Mise
+    password: passW04$D
 
 teams:
   - name: Ops
@@ -48,21 +53,21 @@ credentials:
     team: Ops
     kind: ssh
     username: root
-    private_key: /Users/jmartin/.ssh/ida_rsa
+    private_key: fake_ida_rsa
   - name: Local SSH
     description:  Used for vagrant instances
     team: Ops
     kind: ssh
     username: vagrant
-    private_key: /Users/jmartin/.vagrant.d/insecure_private_key
+    private_key: .vagrant.d/insecure_private_key
   - name: AWS creds
-    description: Used for AWS 
+    description: Used for AWS
     team: Ops
     kind: aws
     username: YOU
     password: CANTHANDLETHIS
   - name: RAX creds
-    description: Used for Rackspace 
+    description: Used for Rackspace
     team: Ops
     kind: rax
     username: me
@@ -90,7 +95,7 @@ inventories:
         - name: 10.42.0.7
         - name: 10.42.0.8
         - name: 10.42.0.9
-        - name: 10.42.0.10     
+        - name: 10.42.0.10
   - name: QA
     description: QA Machines
 
